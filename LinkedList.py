@@ -8,10 +8,10 @@ class LinkedList():
 	def __init__(self):
 		self.length = 0
 		self.head = None
-
+    #判断链表是否为空
 	def is_empty(self):
 		return self.length == 0
-
+    #插入节点this_node
 	def append(self, this_node):
 		if isinstance(this_node, Node):
 			pass
@@ -25,7 +25,7 @@ class LinkedList():
 				p = p.next
 			p.next = this_node
 		self.length+=1
-
+    #在第index处插入节点this_node
 	def insert(self, this_node, index):
 		if index > self.length:
 			return 'Error'
@@ -44,7 +44,7 @@ class LinkedList():
 			this_node.next = p.next
 			p.next = this_node
 		self.length+=1
-
+    #删除第index个节点
 	def delete(self, index):
 		if not 0<= index < self.length:
 			return 'Error'
@@ -57,7 +57,7 @@ class LinkedList():
 				index-=1
 			p.next = p.next.next
 		self.length-=1
-
+    #更新第index节点的值
 	def update(self, data, index):
 		if not 0<= index < self.length:
 			return 'Error'
@@ -69,7 +69,7 @@ class LinkedList():
 				p = p.next
 				index-=1
 			p.data = data
-
+    #获取第index节点的值
 	def get_data(self, index):
 		if not 0<= index < self.length:
 			return 'Error'
@@ -81,14 +81,14 @@ class LinkedList():
 				p = p.next
 				index-=1
 			return p.data
-
+    #获取链表长度
 	def get_length(self):
 		return self.length
-
+    #清空链表
 	def clear(self):
 		self.head = None
 		self.length = 0
-
+    #打印链表
 	def PrintList(self):
 		if self.length ==0:
 			return None
